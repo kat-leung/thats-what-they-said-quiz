@@ -9,12 +9,6 @@ html, body {
   src: local('AmericanTypewriter'), url(./assets/american-typewriter.woff) format('woff');
 }
 
-.background-image-container {
- /* Adjust the height as needed */
-  /* Add more styles as needed */
-}
-
-
 .strikeout {
   text-decoration: line-through;
 }
@@ -61,10 +55,113 @@ html, body {
 }
 
 .startscreen-background {
-
   width: 100%;
   height: 100%;
   object-fit: cover; /* This property ensures the image covers the entire container while maintaining its aspect ratio */
 }
 
+.quiz {
+  background-image: url("./images/corkboard.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+ 
+  
+}
+.bubble {
+  width: 100%;
+}
 
+.quiz-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 2em;
+  background: #4169C1;
+  color: #fff;
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+  width: 200px;
+  height: 8%;
+  padding: 0 10px;
+  rotate: -13deg;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 2em;
+  background: #FF5757;
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 10%;
+}
+
+.button {
+  background: none;
+	color: #fff;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+  font-size:1.5em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column {
+  padding: 10px;
+}
+
+.column-1,
+.column-3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.column-2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.quote {
+  position: absolute;
+  font-family: "American-Typewriter";
+  font-size: 2em;
+  padding-bottom: 1em;
+}
+
+.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .column {
+    margin-bottom: 20px;
+  }
+}
