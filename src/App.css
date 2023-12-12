@@ -148,6 +148,7 @@ html, body {
   font-family: "American-Typewriter";
   font-size: 2em;
   padding-bottom: 1em;
+  width: 20%;
 }
 
 .quote-container {
