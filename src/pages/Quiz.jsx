@@ -113,8 +113,6 @@ export default function Quiz(){
         }, 500); // Adjust the delay time for showing the divs
       };
       
-    
-      console.log(progress)
 
     const quoteStyling = {
         fontSize: "1.5em"
