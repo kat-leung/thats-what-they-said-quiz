@@ -36,7 +36,7 @@ import ryanColour from "../images/ryan cutout colour.png"
 import stanleyColour from "../images/stanley cutout colour.png"
 import tobyColour from "../images/toby cutout colour.png"
 
-function ImageToggleButton({ defaultImage, hoverImage, altText, buttonText, setScore, character, setProgress }) {
+function ImageToggleButton({ defaultImage, hoverImage, altText, buttonText, setScore, character, setProgress, handleAnswerClick }) {
     const [isHovered, setIsHovered] = useState(false);
     
     
@@ -48,6 +48,8 @@ function ImageToggleButton({ defaultImage, hoverImage, altText, buttonText, setS
         } else {
             setScore(prevScore => prevScore + 0); 
             setProgress(prevProgress => prevProgress + 1)};
+
+        handleAnswerClick(firstName === buttonText);
     }
 
 
@@ -72,34 +74,56 @@ function ImageToggleButton({ defaultImage, hoverImage, altText, buttonText, setS
 export default function Quiz(){
     const [quoteData, setQuoteData] = useState([]);
     const [score, setScore] = useState(0);
-    const [progress, setProgress] = useState(1)
+    const [progress, setProgress] = useState(1);
+    const [showRight, setShowRight] = useState(false);
+    const [showWrong, setShowWrong] = useState(false);
 
     useEffect(() => {
         fetch('https://officeapi.akashrajpurohit.com/quote/random')
-        .then((res) => {
+          .then((res) => {
             if (!res.ok) {
-            throw new Error(`HTTP error! Status: ${res.status}`);
+              throw new Error(`HTTP error! Status: ${res.status}`);
             }
             return res.json();
-        })
-        .then((data) => {
+          })
+          .then((data) => {
             setQuoteData(data);
-        })
-        .catch((error) => {
+            // setShowRight(false);
+            // setShowWrong(false);
+          })
+          .catch((error) => {
             console.error('Fetch error:', error);
-        });
-    }, [progress]); 
+          });
+      }, [progress]);
 
+      const handleAnswerClick = (isCorrect) => {
+        // Use setTimeout to show the divs after a short delay
+        setTimeout(() => {
+          if (isCorrect) {
+            setShowRight(true);
+          } else {
+            setShowWrong(true);
+          }
+      
+          // Reset the states after a short time
+          setTimeout(() => {
+            setShowRight(false);
+            setShowWrong(false);
+          }, 1000); // Adjust the delay time for showing the "right" or "wrong" div
+        }, 500); // Adjust the delay time for showing the divs
+      };
+      
     
+      console.log(progress)
+
     const quoteStyling = {
         fontSize: "1.5em"
     }
 
-    if (progress === 10) {
+    if (progress === 11) {
         return <Navigate to={`/quiz/${score}`}/>
     }
 
-    console.log(progress);
     
     return (
         <div className="quiz">
@@ -112,6 +136,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={angela}
@@ -121,6 +146,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
 
                 />
                 <ImageToggleButton
@@ -131,6 +157,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={ryan}
@@ -140,6 +167,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={jim}
@@ -149,6 +177,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={dwight}
@@ -158,6 +187,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={kevin}
@@ -167,6 +197,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={jan}
@@ -176,9 +207,14 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
             </div>
             <div class="column column-2">
+            <div className="answer">
+                {showRight && <p className="right">Correct!</p>}
+                {showWrong && <p className="wrong">Wrong it was {quoteData.character}</p>}
+            </div>
                 <div className="quiz-title"><p>Who said...</p></div>
                 <div className="quote-container">
                     <div className="quote" style={quoteData && quoteData.quote && quoteData.quote.length > 115 ? {...quoteStyling} : {}}><p>"{quoteData && quoteData.quote}"</p></div>
@@ -195,6 +231,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={phyllis}
@@ -204,6 +241,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={stanley}
@@ -213,6 +251,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={andy}
@@ -222,6 +261,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={kelly}
@@ -231,6 +271,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={michael}
@@ -240,6 +281,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={meredith}
@@ -249,6 +291,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
                 <ImageToggleButton
                     defaultImage={toby}
@@ -258,6 +301,7 @@ export default function Quiz(){
                     setScore={setScore}
                     character={quoteData.character}
                     setProgress={setProgress}
+                    handleAnswerClick={handleAnswerClick}
                 />
             </div>
         </div>

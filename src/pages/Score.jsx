@@ -1,5 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
 
 
 export default function Score() {
@@ -14,10 +15,13 @@ export default function Score() {
  
 
   return (
-    <div>
-      <h2>Final score: {numericScore}</h2>
-      <img src={require(`../images/${params.score}.gif`)} alt="xero"></img>
-      <p>{scoreData[numericScore].comment}</p>
+    <div className='final-score'>
+      <p className='final-score-banner'>Final score: {numericScore}</p>
+      <div className='gif'>
+        <img src={require(`../images/${params.score}.gif`)} alt="xero"></img>
+      </div>
+      <p className='comment'>{scoreData[numericScore].comment}</p>
+      <Link to="/quiz"><button className="restart">try again</button></Link> 
     </div>
   );
 }
