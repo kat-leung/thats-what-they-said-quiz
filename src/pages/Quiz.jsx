@@ -97,7 +97,7 @@ export default function Quiz(){
       }, [progress]);
 
       const handleAnswerClick = (isCorrect) => {
-        // Use setTimeout to show the divs after a short delay
+        // setTimeout to show the divs after a short delay
         setTimeout(() => {
           if (isCorrect) {
             setShowRight(true);
@@ -121,6 +121,7 @@ export default function Quiz(){
     if (progress === 11) {
         return <Navigate to={`/quiz/${score}`}/>
     }
+
 
     
     return (

@@ -18,7 +18,7 @@ export default function Score() {
     <div className='final-score'>
       <p className='final-score-banner'>Final score: {numericScore}</p>
       <div className='gif'>
-        <img src={require(`../images/${params.score}.gif`)} alt="xero"></img>
+        <img src={require(`../images/${params.score}.gif`)} alt={scoreData[numericScore].alt}></img>
       </div>
       <p className='comment'>{scoreData[numericScore].comment}</p>
       <Link to="/quiz"><button className="restart">try again</button></Link> 

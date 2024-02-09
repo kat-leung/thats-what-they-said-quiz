@@ -14,25 +14,27 @@ html, body {
 }
 
 .title {
+  text-align: center;
   font-size: 4em;
   font-family: "American-Typewriter";
+  margin: 8%;
 }
 
 .start-quiz {
-  width: 400px;
+  width: 100%;
+  min-width: 150px;
   background: #9BB379;
 	color: white;
 	border: none;
-	padding: 25px;
+	padding: 10px;
 	font: inherit;
-  font-size: 2em;
+  font-size: 1.5em;
 	cursor: pointer;
 	outline: inherit;
   font-family: "Roboto", sans-serif;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
   box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
-  font-weight: 500;
-  font-size: 2.5em;
+  font-weight: 300;
 }
 
 .start-quiz:hover {
@@ -40,7 +42,7 @@ html, body {
 }
 
 .startscreen {
-  background-image: url("./images/background.png");
+  background-image: url("./images/background.jpg");
   background-size: cover;
   background-position: center;
   height: 100vh; 
@@ -60,6 +62,23 @@ html, body {
   object-fit: cover; /* This property ensures the image covers the entire container while maintaining its aspect ratio */
 }
 
+.the-office-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50%;
+  font-family: "American-Typewriter";
+  font-weight: 500;
+  font-size: 2.5em;
+  background: #fff;
+  color: #000;
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+  width: 25%;
+  max-width: 300px;
+  padding: 0 10px;
+  rotate: -13deg;
+}
+
 .quiz {
   background-image: url("./images/corkboard.jpg");
   background-size: cover;
@@ -77,6 +96,7 @@ html, body {
 }
 .bubble {
   width: 100%;
+  object-fit: contain;
 }
 
 .quiz-title {
@@ -143,12 +163,20 @@ html, body {
   text-align: center;
 }
 
+.quiz-title {
+  font-size: 1em;
+  margin-bottom: -10%;
+  width: 100px;
+  max-width: 200px;
+}
+
 .quote {
   position: absolute;
   font-family: "American-Typewriter";
   font-size: 2em;
   padding-bottom: 1em;
   width: 20%;
+  min-width: 200px;
 }
 
 .quote-container {
@@ -157,14 +185,84 @@ html, body {
   align-items: center;
 }
 
-@media (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
+
+@media screen and (max-width: 768px) {
+  .the-office-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50%;
+    font-family: "American-Typewriter";
+    font-weight: 500;
+    font-size: 1.75em;
+    background: #fff;
+    color: #000;
+    box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+    width: 25%;
+    max-width: 300px;
+    min-width: 123px;
+    height: 8%;
+    padding: 0 10px;
+    rotate: -13deg;
+  }
+
+  .title {
+    font-size: 2.5em;
+    font-family: "American-Typewriter";
+  }
+
+  .quiz {
+    grid-template-columns: 1fr; /* Change to a single column for mobile */
+    overflow: visible;
   }
 
   .column {
-    margin-bottom: 20px;
+    padding: 0px;
   }
+
+  .column-1,
+  .column-3 {
+    grid-template-columns: repeat(4, 1fr); /* Two rows of four icons */
+    grid-template-rows: 1fr; /* Single row for mobile */
+    gap: 0;
+    max-height: 100px;;
+  }
+
+  .column-2 {
+    display: block;
+    text-align: center;
+    margin-bottom: -40%;
+    margin-top: -5%;
+  }
+
+  .button img{
+    max-width: 50px;
+  }
+
+  .button {
+    font-size: 1em;
+  }
+
+  .quote {
+    font-size: 1em;
+    min-width: 300px;
+  }
+
+  .score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1em;
+    background: #FF5757;
+    box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 8%;
+    margin-top: -3%;
+  }
+
 }
 
 /* styling for final score page */
@@ -222,10 +320,12 @@ html, body {
 }
 
 .answer {
-  position: absolute;
-  top: 0;
+  display: flex;
+  top: 1%;
   left: 50%;
-  margin: 30px;
+  justify-content: center;
+  position: absolute;
+  transform: translateX(-50%);
 }
 
 .right {
