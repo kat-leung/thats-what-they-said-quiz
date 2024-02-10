@@ -113,10 +113,11 @@ export default function Quiz(){
         }, 500); // Adjust the delay time for showing the divs
       };
       
-
+// if window size is smaller that 768. font size should be .75
     const quoteStyling = {
-        fontSize: "1.5em"
-    }
+        fontSize: window.innerWidth < 769 ? "0.75em" : "1.5em"
+    };
+  
 
     if (progress === 11) {
         return <Navigate to={`/quiz/${score}`}/>

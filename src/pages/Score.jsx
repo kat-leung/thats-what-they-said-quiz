@@ -8,8 +8,6 @@ export default function Score() {
 
   const numericScore = parseInt(params.score, 10);
 
-  console.log(numericScore)
-
   const scoreData = require(`../assets/score.json`)
 
  
