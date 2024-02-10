@@ -1,4 +1,4 @@
-# That's what she said!
+# That's what ~she~ they said!
 
 ![michael scott screaming "that's what she said!"](./src/images/thats-what-she-said.gif)
 
