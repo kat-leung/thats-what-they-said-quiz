@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # thats-what-they-said-quiz
 The Office quotes quiz
 =======
@@ -11,4 +10,4 @@ How well do you know "The Office"? Test your knowledge by guessing quotes from t
 Disclaimer: This app is intended for entertainment purposes only. All content provided in this application is for fun and parody, and no copyright infringement is intended.
 
 Built by Kat Leung
->>>>>>> master
+
