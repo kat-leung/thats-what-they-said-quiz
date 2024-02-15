@@ -1,0 +1,401 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'American-Typewriter';
+  src: local('AmericanTypewriter'), url(./assets/american-typewriter.woff) format('woff');
+}
+
+.strikeout {
+  text-decoration: line-through;
+}
+
+.title {
+  text-align: center;
+  font-size: 4em;
+  font-family: "American-Typewriter";
+  margin: 30px;
+}
+
+.start-quiz {
+  width: 100%;
+  min-width: 200px;
+  background: #9BB379;
+	color: white;
+	border: none;
+	padding: 10px;
+	font: inherit;
+  font-size: 1.5em;
+	cursor: pointer;
+	outline: inherit;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+  font-weight: 500;
+}
+
+.start-quiz:hover {
+  background: #768A59;
+}
+
+.startscreen {
+  background-image: url("./images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.startscreen-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This property ensures the image covers the entire container while maintaining its aspect ratio */
+}
+
+.the-office-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50%;
+  font-family: "American-Typewriter";
+  font-weight: 500;
+  font-size: 2.5em;
+  background: #fff;
+  color: #000;
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+  width: 25%;
+  max-width: 300px;
+  padding: 0 10px;
+  rotate: -13deg;
+}
+
+.the-office-banner p {
+  margin: 5%;
+}
+
+.quiz {
+  background-image: url("./images/corkboard.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+ 
+  
+}
+.bubble {
+  width: 125%;
+  object-fit: contain;
+}
+
+.quiz-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 2em;
+  background: #4169C1;
+  color: #fff;
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+  width: 200px;
+  height: 8%;
+  padding: 0 10px;
+  rotate: -13deg;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 2em;
+  background: #FF5757;
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 10%;
+  margin-top: 5%;
+}
+
+.button {
+  background: none;
+	color: #fff;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  font-family: "roboto", sans-serif;
+  font-weight: 500;
+  font-size:1.5em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.column {
+  padding: 10px;
+}
+
+.column-1,
+.column-3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.column-2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.quiz-title {
+  font-size: 1.5em;
+  margin-bottom: 5%;
+  width: 200px;
+  max-width: 200px;
+}
+
+.quote {
+  position: absolute;
+  font-family: "American-Typewriter";
+  font-size: 2em;
+  padding-bottom: 1em;
+  width: 20%;
+  min-width: 200px;
+}
+
+.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* styling for final score page */
+
+.final-score {
+  background-image: url("./images/legal-pad.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+}
+
+.final-score-banner {
+  background-color: #2596be;
+  padding: 15px 50px;
+  color: #fff;
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+  font-family: "Roboto", sans-serif;
+  font-size: 2em;
+  margin-bottom: 1.5em;
+}
+
+
+.comment {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5em;
+  width: 70%;
+  max-width: 710px;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+  padding: 1em;
+  margin-top: 1em;
+}
+
+p {
+  margin: 0px;
+}
+
+.restart {
+  width: 200px;
+  background: #FF5757;
+	color: white;
+	border: none;
+	padding: 25px;
+	font: inherit;
+  font-size: 2em;
+	cursor: pointer;
+	outline: inherit;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); 
+  box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+  font-weight: 500;
+  font-size: 1em;
+  margin: 1em;
+}
+
+.answer {
+  display: flex;
+  top: 1%;
+  left: 50%;
+  justify-content: center;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.right {
+  background-color: #9BB379;
+  font-size: 1.5em;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  padding: 15px;
+}
+
+.wrong {
+  background-color: #FF5757;
+  font-size: 1.5em;
+  font-weight: 300;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  padding: 15px;
+}
+
+.gif img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .the-office-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50%;
+    font-family: "American-Typewriter";
+    font-weight: 500;
+    font-size: 1.75em;
+    background: #fff;
+    color: #000;
+    box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+    width: 25%;
+    max-width: 300px;
+    min-width: 123px;
+    height: 8%;
+    padding: 0 10px;
+    rotate: -13deg;
+  }
+
+  .title {
+    font-size: 2.5em;
+    font-family: "American-Typewriter";
+  }
+
+  .quiz {
+    grid-template-columns: 1fr; /* Change to a single column for mobile */
+    overflow: visible;
+  }
+
+  .quiz-title {
+    max-width: 100px;
+    font-size: 1em;
+    margin-bottom: -15%;
+  }
+
+  .column {
+    padding: 0px;
+  }
+
+  .column-1,
+  .column-3 {
+    grid-template-columns: repeat(4, 1fr); /* Two rows of four icons */
+    grid-template-rows: 1fr; /* Single row for mobile */
+    gap: 0;
+    max-height: 100px;;
+  }
+
+  .column-3 {
+    margin-top: 15%;
+  }
+
+  .column-2 {
+    display: block;
+    text-align: center;
+    margin-bottom: -40%;
+    margin-top: -10%;
+  }
+
+  .button img{
+    max-width: 50px;
+  }
+
+  .button {
+    font-size: 1em;
+  }
+
+  .quote {
+    font-size: 1em;
+    min-width: 300px;
+    z-index: 3;
+  }
+
+  .score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1em;
+    background: #FF5757;
+    box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.25); 
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 8%;
+    margin-top: -10px;
+  }
+
+  .bubble {
+    max-width: 350px;
+  }
+
+  .comment { 
+    margin: 10px;
+    font-size: 1em;
+    width: 80%;
+  }
+
+  .restart {  
+    padding: .5em;
+    font-size: 1em;
+    margin: 10px;
+    width: 125px;
+  }
+  
+  .final-score-banner {
+    padding: .5em;
+    font-size: 1.5em;
+    margin: 10px;
+  }
+
+}
