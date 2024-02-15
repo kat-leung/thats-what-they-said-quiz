@@ -211,10 +211,10 @@ export default function Quiz(){
                 />
             </div>
             <div class="column column-2">
-            <div className="answer">
-                {showRight && <p className="right">Correct!</p>}
-                {showWrong && <p className="wrong">Wrong it was {quoteData.character}</p>}
-            </div>
+                <div className="answer">
+                    {showRight && <p className="right">Correct!</p>}
+                    {showWrong && <p className="wrong">Wrong it was {quoteData.character}</p>}
+                </div>
                 <div className="quiz-title"><p>Who said...</p></div>
                 <div className="quote-container">
                     <div className="quote" style={quoteData && quoteData.quote && quoteData.quote.length > 115 ? {...quoteStyling} : {}}><p>"{quoteData && quoteData.quote}"</p></div>
