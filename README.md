@@ -1,6 +1,3 @@
-# thats-what-they-said-quiz
-The Office quotes quiz
-=======
 # That's what ~she~ they said!
 
 ![michael scott screaming "that's what she said!"](./src/images/thats-what-she-said.gif)
